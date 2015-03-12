@@ -1,0 +1,39 @@
+<% robot = raw("<td class='robot'>&nbsp;</td>") %>
+<% not_robot = raw('<td>&nbsp;</td>') %>
+<table>
+  <tr>
+    <%= (@x == 0 && @y == 4) ? robot : not_robot %>
+    <%= (@x == 1 && @y == 4) ? robot : not_robot %>
+    <%= (@x == 2 && @y == 4) ? robot : not_robot %>
+    <%= (@x == 3 && @y == 4) ? robot : not_robot %>
+    <%= (@x == 4 && @y == 4) ? robot : not_robot %>
+  </tr>
+  <tr>
+    <%= (@x == 0 && @y == 3) ? robot : not_robot %>
+    <%= (@x == 1 && @y == 3) ? robot : not_robot %>
+    <%= (@x == 2 && @y == 3) ? robot : not_robot %>
+    <%= (@x == 3 && @y == 3) ? robot : not_robot %>
+    <%= (@x == 4 && @y == 3) ? robot : not_robot %>
+  </tr>
+  <tr>
+    <%= (@x == 0 && @y == 2) ? robot : not_robot %>
+    <%= (@x == 1 && @y == 2) ? robot : not_robot %>
+    <%= (@x == 2 && @y == 2) ? robot : not_robot %>
+    <%= (@x == 3 && @y == 2) ? robot : not_robot %>
+    <%= (@x == 4 && @y == 2) ? robot : not_robot %>
+  </tr>
+  <tr>
+    <%= (@x == 0 && @y == 1) ? robot : not_robot %>
+    <%= (@x == 1 && @y == 1) ? robot : not_robot %>
+    <%= (@x == 2 && @y == 1) ? robot : not_robot %>
+    <%= (@x == 3 && @y == 1) ? robot : not_robot %>
+    <%= (@x == 4 && @y == 1) ? robot : not_robot %>
+  </tr>
+  <tr>
+    <%= (@x == 0 && @y == 0 && !@facing.blank?) ? robot : not_robot %>
+    <%= (@x == 1 && @y == 0) ? robot : not_robot %>
+    <%= (@x == 2 && @y == 0) ? robot : not_robot %>
+    <%= (@x == 3 && @y == 0) ? robot : not_robot %>
+    <%= (@x == 4 && @y == 0) ? robot : not_robot %>
+  </tr>
+</table>

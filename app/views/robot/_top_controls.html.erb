@@ -1,0 +1,32 @@
+<div class="left">
+  <%= form_tag root_path(m: "place") do %>
+    <table>
+      <tr>
+        <td><%= text_field_tag :x, nil, placeholder: "Position X" %></td>
+      </tr>
+      <tr>
+        <td><%= text_field_tag :y, nil, placeholder: "Position Y" %></td>
+      </tr>
+      <tr>
+        <td><%= select_tag :f, options_for_select([['North'], ['South'], ['West'], ['East']]) %></td>
+      </tr>
+      <tr>
+        <td><%= submit_tag "Place", class: "button" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+<div class="right">
+  <%= button_to "Move", root_path(m: "step", x: @x, y: @y, f: @facing), class: "button" %>
+  <table class="control_table">
+    <tr>
+      <td>
+        <%= button_to "Left", root_path(m: "turn", d: "Left", x: @x, y: @y, f: @facing), class: "button" %>
+      </td>
+      <td>
+        <%= button_to "Right", root_path(m: "turn", d: "Right", x: @x, y: @y, f: @facing), class: "button" %>
+      </td>
+    </tr>
+  </table>
+  <%= button_to "Report", root_path(m: "report", x: @x, y: @y, f: @facing), class: "button" %>
+</div>

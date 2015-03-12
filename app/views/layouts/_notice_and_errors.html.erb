@@ -1,0 +1,21 @@
+<div class="errors_and_notices">
+  <% if @errors && @errors.size > 0 %>
+    <div class="errorExplanation">
+      <h2>
+        <%= pluralize(@errors.size, "command") %>
+        stopped the robot:
+      </h2>
+      <ul>
+        <% @errors.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <div class="instructions">
+      <%= flash[:notice] ? flash[:notice] : @instruction %>
+    </div>
+  <% end %>
+</div>
